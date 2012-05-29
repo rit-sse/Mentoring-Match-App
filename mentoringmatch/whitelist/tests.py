@@ -2,13 +2,15 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from whitelist.models import Mentor
 
-class WhiteListSetup(TestCase):
+class WhitelistTests(TestCase):
   #make sure that we make the mentor unicode something meaningful
   def test_overridden_mentor_unicode(self):
     mentor = Mentor(dce="deb3323", first_name="Dorrene", last_name="Brown")
     self.assertFalse(str(mentor) == 'Mentor object')
+    
 
-class WhitelistMentorValidation(TestCase):
+#tests that the data inside of each mentor is correct
+class WhitelistMentorDataValidation(TestCase):
   def setUp(self):
     self.mentor = Mentor(dce="deb3323", first_name="Dorrene", last_name="Brown")
   

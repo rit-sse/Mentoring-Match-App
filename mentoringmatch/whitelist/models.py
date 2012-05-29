@@ -1,10 +1,11 @@
 import re
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core.exceptions import ObjectDoesNotExist
 
 #Symbolizes a mentor in the whitelist
 class Mentor(models.Model):
-  dce = models.CharField(max_length=7)
+  dce = models.CharField(max_length=7, unique=True)
   first_name = models.CharField(max_length=20)
   last_name = models.CharField(max_length=20)
   
