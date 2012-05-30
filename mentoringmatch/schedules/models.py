@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from whitelist.models import Mentor
 
 
 class Template( models.Model ):
@@ -69,13 +69,14 @@ class Schedule( models.Model ):
 class Assignment( models.Model ):
     """Associates a mentor with a specific slot within a session"""
 
-    mentor = models.ForeignKey( User )
+    mentor = models.ForeignKey( Mentor )
     slot = models.ForeignKey( Slot )
-    template = models.ForeignKey( Template )
+    schedule = models.ForeignKey( Schedule )
 
     def __unicode__( self ):
         params = {
-            'mentor': self.mentor.username,
+            'first': self.mentor.first_name,
+            'last': self.mentor.last_name,
             'slot': self.slot,
         }
-        return "%(mentor)s - %(slot)s" % params
+        return "%(first)s %(last)s - %(slot)s" % params
