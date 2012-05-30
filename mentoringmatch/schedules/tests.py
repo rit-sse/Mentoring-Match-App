@@ -1,16 +1,11 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
+from whitelist.models import Mentor
+from schedules.models import Template
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+class SchedulesTests( TestCase ):
+
+    def test_overridden_template_unicode( self ):
+        """Ensures the template unicode contains useful info"""
+        template = Template( name="Some template" )
+        self.assertNotEqual( str( template ), 'Template object' )

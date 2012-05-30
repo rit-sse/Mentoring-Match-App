@@ -1,5 +1,5 @@
 from django.contrib import admin
-from sessions.models import *
+from schedules.models import *
 
 admin.site.register( Template )
 admin.site.register( Slot )

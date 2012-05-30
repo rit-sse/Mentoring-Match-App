@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'whitelist',
-    'sessions',
+    'schedules',
 )
 
 # A sample logging configuration. The only tangible logging
