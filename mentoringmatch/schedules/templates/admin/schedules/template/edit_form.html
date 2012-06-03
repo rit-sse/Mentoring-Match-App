@@ -1,0 +1,99 @@
+{% extends "admin/change_form.html" %}
+{% load staticfiles %}
+
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "schedules/stylesheets/screen.css" %}" media="screen, projection" />
+{% endblock %}
+
+
+{% block extrahead %}
+{{ block.super }}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="{% static "schedules/javascripts/schedule.js" %}"></script>
+{% endblock %}
+
+
+{% block field_sets %}
+
+<div class="calendar-wrapper">
+
+<noscript>Javascript is required to manage this item.</noscript>
+
+<table id="calendar" class="calendar">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for hour in time_labels %}
+            <tr>
+                <td>{{ hour }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<ol class="schedule">
+    <li class="day">
+        <ul></ul>
+    </li>
+    <li class="day">
+        <ul>
+            <li data-start="10:00" data-end="12:00">Item 1</li>
+            <li data-start="12:00" data-end="14:00">Item 2</li>
+            <li data-start="14:00" data-end="16:00">Item 3</li>
+            <li data-start="16:00" data-end="18:00">Item 4</li>
+        </ul>
+    </li>
+    <li class="day">
+        <ul>
+            <li data-start="10:00" data-end="12:30">Item 1</li>
+            <li data-start="14:00" data-end="16:00">Item 3</li>
+            <li data-start="16:42" data-end="18:00">Item 4</li>
+        </ul>
+    </li>
+    <li class="day">
+        <ul>
+            <li data-start="10:00" data-end="12:00">Item 1</li>
+            <li data-start="12:00" data-end="14:00">Item 2</li>
+        </ul>
+    </li>
+    <li class="day">
+        <ul>
+            <li data-start="10:15" data-end="12:15">Item 1</li>
+            <li data-start="12:30" data-end="14:30">Item 2</li>
+            <li data-start="14:45" data-end="16:45">Item 3</li>
+            <li data-start="17:00" data-end="19:00">Item 4</li>
+        </ul>
+    </li>
+    <li class="day">
+        <ul>
+            <li data-start="12:00" data-end="14:00">Item 2</li>
+            <li data-start="14:00" data-end="16:00">Item 3</li>
+            <li data-start="16:00" data-end="18:00">Item 4</li>
+        </ul>
+    </li>
+</ol>
+
+</div>
+
+{% endblock %}

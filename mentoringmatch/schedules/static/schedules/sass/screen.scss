@@ -1,0 +1,56 @@
+@import "compass/reset/utilities";
+
+$day-width: 150px;
+$label-width: $day-width / 3;
+$django-header-color: #417690;
+
+.calendar-wrapper {
+    position: relative;
+}
+
+
+.calendar {
+
+    margin-bottom: 2em;
+
+    td {
+        padding-bottom: 2em;
+        width: $day-width;
+
+        &:first-child {
+            width: $label-width;
+            text-align: right;
+        }
+    }
+
+}
+
+.schedule, .schedule ul, .schedule li {
+    @include reset-box-model;
+    @include reset-list-style;
+}
+
+.schedule {
+    position: absolute;
+    top: 1.4em; left: $label-width + 2px;
+}
+
+.day {
+
+    width: $day-width; 
+    float: left;
+
+    ul {
+        margin-top: 1px;
+        width: $day-width; height: 428px;
+        position: relative;
+    }
+    
+    li {
+        margin-bottom: 2px;
+        width: $day-width - 6;
+        background: rgba( $django-header-color, 0.5 );
+        border: 2px solid transparent;
+        position: absolute;
+    }
+}
