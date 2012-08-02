@@ -8,6 +8,7 @@ import logging
 class SlotInline( admin.TabularInline ):
     """Enables inline editing of template slots"""
     model = Slot
+    ordering = ('day', 'start')
 
 
 class TemplateAdmin( admin.ModelAdmin ):
@@ -18,7 +19,7 @@ class TemplateAdmin( admin.ModelAdmin ):
 class AssignmentInline( admin.TabularInline ):
     """Enables inline editing of assignments in a schedule"""
     model = Assignment
-
+    ordering = ('slot__day', 'slot__start', 'slot__end')
 
 class ScheduleAdmin( admin.ModelAdmin ):
     """Configures the AssignmentInline on the Schedule admin page"""

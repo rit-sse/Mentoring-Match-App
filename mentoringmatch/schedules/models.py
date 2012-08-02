@@ -23,16 +23,16 @@ class Slot( models.Model ):
     """
 
     DAY_CHOICES = (
-        ('SUN', 'Sunday'),
-        ('MON', 'Monday'),
-        ('TUE', 'Tuesday'),
-        ('WED', 'Wednesday'),
-        ('THU', 'Thursday'),
-        ('FRI', 'Friday'),
-        ('SAT', 'Saturday'),
+        (0, 'Sunday'),
+        (1, 'Monday'),
+        (3, 'Tuesday'),
+        (4, 'Wednesday'),
+        (5, 'Thursday'),
+        (6, 'Friday'),
+        (7, 'Saturday'),
     )
 
-    day = models.CharField( max_length=3, choices=DAY_CHOICES )
+    day = models.IntegerField( max_length=3, choices=DAY_CHOICES )
     start = models.TimeField()
     end = models.TimeField()
     template = models.ForeignKey( Template )
