@@ -1,0 +1,76 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  @include blueprint-grid;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+
+  .container {
+    overflow: visible;
+  }
+}
+
+form.bp {
+  @include blueprint-form;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    background: $dark-blue;
+}
+
+@mixin header-gradient(){
+    @include background-image(
+        linear-gradient(top, $top-gradient-blue, $bottom-gradient-blue 102px, #222 103px)
+    );
+    background-image: linear-gradient(to bottom, $top-gradient-blue, $bottom-gradient-blue 102px, #222 103px);
+    background-color: $bottom-gradient-blue
+}
+
+@mixin main-nav-gradient(){
+    @include background-image(
+        linear-gradient(top, #ccc, #fff 4%, #fff 96%, #ccc 100%)
+    );
+    background-image: linear-gradient(to bottom, #ccc, #fff 4%, #fff 96%, #ccc 100%);
+    background-color: #fff;
+}
+
+header {
+    height: 103px;
+    @include full-width-background();
+    @include header-gradient();
+    &:before, &:after {
+        @include header-gradient();
+    }
+}
+
+.main-nav {
+    display: block;
+
+    @include full-width-background();
+    @include main-nav-gradient();
+    &:before, &:after {
+        @include main-nav-gradient();
+    }
+}
