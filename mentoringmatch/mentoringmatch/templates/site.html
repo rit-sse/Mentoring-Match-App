@@ -10,12 +10,25 @@
 <body class="bp">
     <div class="container">
         <header> 
-            <img src="{% static 'logo.png' %}" alt="SSE Logo">
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" alt="SSE Logo" width="201" height="55">
+            </div>
+            <nav class="sse-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About the SSE</a></li>
+                </ul>
+            </nav>
         </header>
 
         <nav class="main-nav">
-            Mentoring Match
-            <ul>
+            <div class="main-nav-title">
+                Mentoring Match
+            </div>
+            <ul class="main-nav-links">
                 <li><a href="#">Mentors</a></li>
                 <li><a href="#">Schedule</a></li>
                 <li><a href="#">Get help</a></li>

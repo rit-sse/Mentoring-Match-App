@@ -2,7 +2,7 @@
 // Feel free to delete these if you want keep the defaults:
 
 $blueprint-grid-columns: 24;
-$blueprint-container-size: 950px;
+$blueprint-container-size: 960px;
 $blueprint-grid-margin: 10px;
 
 // Use this to calculate the width based on the total width.
@@ -10,13 +10,14 @@ $blueprint-grid-margin: 10px;
 $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
 
 $top-gradient-blue: #226599;
-$bottom-gradient-blue: #043e64;
-
-$dark-blue: darken($bottom-gradient-blue, 5%);
+$bottom-gradient-blue: #1B4F82;
+$dark-blue: darken(#043e64, 5%);
 
 // Important modules
 @import "compass/css3";
 @import "compass/css3/images";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/css3/transition";
 
 // Full width browser bars
 // http://css-tricks.com/full-browser-width-bars/

@@ -56,8 +56,11 @@ html {
     background-color: #fff;
 }
 
+// Header styles
+$header-height: 103px;
+
 header {
-    height: 103px;
+    height: $header-height;
     @include full-width-background();
     @include header-gradient();
     &:before, &:after {
@@ -65,7 +68,42 @@ header {
     }
 }
 
+.sse-nav {
+    padding-top: 30px;
+    ul {
+        @include horizontal-list();
+
+        li {
+            padding-left: $blueprint-grid-margin;
+            padding-right: $blueprint-grid-margin;
+        }
+
+        a, a:visited {
+            margin: $blueprint-grid-margin;
+            display: inline-block;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #9AB7C7;
+            @include transition(300ms all);
+
+            &:hover {
+                color: white;
+                text-shadow: 1px 1px 0 #333;
+                @include transition(300ms all);
+            }
+        }
+    }
+}
+
+.logo {
+    @extend .span-9;
+    margin-top: 22px;
+}
+
+// Navigational styles
 .main-nav {
+    padding: 0.5em 0;
     display: block;
 
     @include full-width-background();
@@ -73,4 +111,13 @@ header {
     &:before, &:after {
         @include main-nav-gradient();
     }
+}
+
+.main-nav-title {
+    @extend .span-6;
+    font-size: 1.8em;
+}
+
+.main-nav-links {
+    @include horizontal-list();
 }
