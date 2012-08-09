@@ -14,7 +14,7 @@
 // If you are doing a lot of stylesheet concatenation, it is suggested
 // that you scope your blueprint styles, so that you can better control
 // what pages use blueprint when stylesheets are concatenated together.
-body.bp {
+body {
   @include blueprint-typography(true);
   @include blueprint-utilities;
   @include blueprint-debug;
@@ -46,14 +46,6 @@ html {
     );
     background-image: linear-gradient(to bottom, $top-gradient-blue, $bottom-gradient-blue 102px, #222 103px);
     background-color: $bottom-gradient-blue
-}
-
-@mixin main-nav-gradient(){
-    @include background-image(
-        linear-gradient(top, #ccc, #fff 4%, #fff 96%, #ccc 100%)
-    );
-    background-image: linear-gradient(to bottom, #ccc, #fff 4%, #fff 96%, #ccc 100%);
-    background-color: #fff;
 }
 
 // Header styles
@@ -102,22 +94,56 @@ header {
 }
 
 // Navigational styles
+$main-nav-bg:  #0473B2;
+$main-nav-accent: #032F48;
+
+@mixin main-nav-bg(){
+    background: url(/static/main-nav-bg.png) top center no-repeat $main-nav-bg;
+}
+
 .main-nav {
     padding: 0.5em 0;
+    height: 39px;
     display: block;
 
+    color: #222;
+
     @include full-width-background();
-    @include main-nav-gradient();
+    @include main-nav-bg();
     &:before, &:after {
-        @include main-nav-gradient();
+        @include main-nav-bg();
     }
 }
 
 .main-nav-title {
-    @extend .span-6;
+    @extend .span-10;
+    line-height: 39px;
     font-size: 1.8em;
 }
 
 .main-nav-links {
     @include horizontal-list();
+    padding-bottom: 0.1em;
+    margin-bottom: 0;
+
+    a {
+        margin: 0 $blueprint-grid-margin;
+        padding: $blueprint-grid-margin / 2  $blueprint-grid-margin;
+        display: inline-block;
+        font-size: 1.6em;
+        text-decoration: none;
+        color: $main-nav-accent;
+        @include border-radius($blueprint-grid-margin);
+        @include transition(300ms all);
+
+        &:visited {
+            color: $main-nav-accent;
+        }
+
+        &:hover {
+            color: $main-nav-bg;
+            background-color: $main-nav-accent;
+            @include transition(300ms all);
+        }
+    }
 }
