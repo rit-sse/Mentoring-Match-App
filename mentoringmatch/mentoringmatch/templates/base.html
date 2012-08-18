@@ -6,9 +6,12 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/screen.css' %}" media="screen, projection" />
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/print.css' %}" media="print" />
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}{% endblock %}
 </head>
 <body class="bp">
     <div class="container">
+
         <header> 
             <div class="logo">
                 <img src="{% static 'logo.png' %}" alt="SSE Logo" width="201" height="55">
@@ -34,7 +37,13 @@
                 <li><a href="#">Get help</a></li>
             </ul>
         </nav>
-        <h1>SSE!</h1>
+
+        <div class="content">
+            {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+            {% block content %}
+            {{ content }}
+            {% endblock %}
+        </div>
 
     </div>
 </body>

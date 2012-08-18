@@ -986,7 +986,16 @@ body .prepend-top {
 body .append-bottom {
   margin-bottom: 1.5em;
 }
-/* line 26, ../sass/screen.scss */
+/* line 61, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body * html {
+  font-size: 100%;
+}
+/* line 64, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+/* line 27, ../sass/screen.scss */
 body .container {
   overflow: visible;
 }
@@ -1055,17 +1064,18 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 html, body {
   overflow-x: hidden;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 html {
-  background: #032f4b;
+  background: white;
+  color: #222;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 header {
   height: 103px;
   position: relative;
@@ -1077,7 +1087,7 @@ header {
   background-image: linear-gradient(to bottom, #226599, #1b4f82 102px, #222222 103px);
   background-color: #1b4f82;
 }
-/* line 26, ../sass/partials/_base.scss */
+/* line 30, ../sass/partials/_base.scss */
 header:before, header:after {
   content: "";
   position: absolute;
@@ -1085,15 +1095,15 @@ header:before, header:after {
   bottom: 0;
   width: 9999px;
 }
-/* line 33, ../sass/partials/_base.scss */
+/* line 37, ../sass/partials/_base.scss */
 header:before {
   right: 100%;
 }
-/* line 34, ../sass/partials/_base.scss */
+/* line 38, ../sass/partials/_base.scss */
 header:after {
   left: 100%;
 }
-/* line 58, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 header:before, header:after {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 103, color-stop(0%, #226599), color-stop(99.029%, #1b4f82), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(top, #226599, #1b4f82 102px, #222222 103px);
@@ -1104,11 +1114,11 @@ header:before, header:after {
   background-color: #1b4f82;
 }
 
-/* line 63, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .sse-nav {
   padding-top: 30px;
 }
-/* line 65, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 .sse-nav ul {
   margin: 0;
   padding: 0;
@@ -1139,12 +1149,12 @@ header:before, header:after {
 .sse-nav ul li.last {
   padding-right: 0;
 }
-/* line 68, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .sse-nav ul li {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 73, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .sse-nav ul a, .sse-nav ul a:visited {
   margin: 10px;
   display: inline-block;
@@ -1157,7 +1167,7 @@ header:before, header:after {
   -o-transition: 300ms all;
   transition: 300ms all;
 }
-/* line 82, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .sse-nav ul a:hover, .sse-nav ul a:visited:hover {
   color: white;
   text-shadow: 1px 1px 0 #333;
@@ -1167,12 +1177,12 @@ header:before, header:after {
   transition: 300ms all;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .logo {
   margin-top: 22px;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .main-nav {
   padding: 0.5em 0;
   height: 39px;
@@ -1181,7 +1191,7 @@ header:before, header:after {
   position: relative;
   background: url(/static/main-nav-bg.png) top center no-repeat #0473b2;
 }
-/* line 26, ../sass/partials/_base.scss */
+/* line 30, ../sass/partials/_base.scss */
 .main-nav:before, .main-nav:after {
   content: "";
   position: absolute;
@@ -1189,26 +1199,26 @@ header:before, header:after {
   bottom: 0;
   width: 9999px;
 }
-/* line 33, ../sass/partials/_base.scss */
+/* line 37, ../sass/partials/_base.scss */
 .main-nav:before {
   right: 100%;
 }
-/* line 34, ../sass/partials/_base.scss */
+/* line 38, ../sass/partials/_base.scss */
 .main-nav:after {
   left: 100%;
 }
-/* line 113, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .main-nav:before, .main-nav:after {
   background: url(/static/main-nav-bg.png) top center no-repeat #0473b2;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .main-nav-title {
   line-height: 39px;
   font-size: 1.8em;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .main-nav-links {
   margin: 0;
   padding: 0;
@@ -1241,7 +1251,7 @@ header:before, header:after {
 .main-nav-links li.last {
   padding-right: 0;
 }
-/* line 129, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 .main-nav-links a {
   margin: 0 10px;
   padding: 5px 10px;
@@ -1259,11 +1269,11 @@ header:before, header:after {
   -o-transition: 300ms all;
   transition: 300ms all;
 }
-/* line 139, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .main-nav-links a:visited {
   color: #032f48;
 }
-/* line 143, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .main-nav-links a:hover {
   color: #0473b2;
   background-color: #032f48;
@@ -1271,4 +1281,9 @@ header:before, header:after {
   -moz-transition: 300ms all;
   -o-transition: 300ms all;
   transition: 300ms all;
+}
+
+/* line 153, ../sass/screen.scss */
+.content {
+  padding-top: 15px;
 }

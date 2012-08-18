@@ -13,11 +13,15 @@ $top-gradient-blue: #226599;
 $bottom-gradient-blue: #1B4F82;
 $dark-blue: darken(#043e64, 5%);
 
+$base-font-size: 16px;
+$base-line-height: 24px;
+
 // Important modules
 @import "compass/css3";
 @import "compass/css3/images";
 @import "compass/typography/lists/horizontal-list";
 @import "compass/css3/transition";
+@import "compass/typography/vertical_rhythm";
 
 // Full width browser bars
 // http://css-tricks.com/full-browser-width-bars/

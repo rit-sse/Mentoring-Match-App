@@ -20,6 +20,7 @@ body {
   @include blueprint-debug;
   @include blueprint-interaction;
   @include blueprint-grid;
+  @include establish-baseline;
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
@@ -37,7 +38,8 @@ html, body {
 }
 
 html {
-    background: $dark-blue;
+    background: white;
+    color: #222;
 }
 
 @mixin header-gradient(){
@@ -146,4 +148,8 @@ $main-nav-accent: #032F48;
             @include transition(300ms all);
         }
     }
+}
+
+.content {
+    padding-top: $blueprint-grid-margin * 1.5;
 }
