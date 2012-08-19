@@ -1,4 +1,7 @@
 # Django settings for mentoringmatch project.
+import os
+
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -109,6 +112,9 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+
+    # This generates an absolute path when Django asks for it
+    os.path.join(PROJECT_PATH, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -124,6 +130,13 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'whitelist',
     'schedules',
+)
+
+# Additional directories to include for static files. The staticfiles app 
+# should automatically include the /static/ folder at the root of each of
+# the installed apps above
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 # A sample logging configuration. The only tangible logging

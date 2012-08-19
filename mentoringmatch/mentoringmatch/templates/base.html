@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/screen.css' %}" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/print.css' %}" media="print" />
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}{% endblock %}
+</head>
+<body class="bp">
+    <div class="container">
+
+        <header> 
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" alt="SSE Logo" width="201" height="55">
+            </div>
+            <nav class="sse-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About the SSE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="main-nav">
+            <div class="main-nav-title">
+                Mentoring Match
+            </div>
+            <ul class="main-nav-links">
+                <li><a href="#">Mentors</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Get help</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+            {% block content %}
+            {{ content }}
+            {% endblock %}
+        </div>
+
+    </div>
+</body>
+</html>
